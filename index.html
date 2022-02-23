@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="library/scss/style.css">
 </head>
 
 <body>
@@ -58,7 +58,9 @@
                         <img src="./images/image1.png" alt="" 1x data-aos="fade-left" data-aos-delay="250">
                     </div>
                 </div>
+                <a href="#" class="scroll-down" address="true"></a>
             </section>
+            <section class="ok"></section>
             <section class="location" data-aos="fade-up" data-aos-delay="500">
                 <div class="container container_location">
                     <div class="location-item">
@@ -476,61 +478,69 @@
             </div>
         </footer>
     </div>
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script>
-        var Swipes = new Swiper(".swiper-container", {
-            direction: "horizontal",
-            loop: true,
-            autoplay: true,
-            spaceBetween: "10%",
-            slidesPerView: 5,
-            slidesPerGroup: 1,
-            autoplay: {
-                delay: 5000,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script>
+    var Swipes = new Swiper(".swiper-container", {
+        direction: "horizontal",
+        loop: true,
+        autoplay: true,
+        spaceBetween: "10%",
+        slidesPerView: 5,
+        slidesPerGroup: 1,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
 
-            breakpoint: {
-                '767': {
-                    slidesPerView: 4,
-                },
-                '540': {
-                    slidesPerView: 3,
-                },
+        breakpoint: {
+            '767': {
+                slidesPerView: 4,
             },
-
-        });
-
-        var swiper = new Swiper(".mySwiper", {
-            // cssMode: true, cho kéo thả slide
-            loop: true,
-            /* vòng lặp */
-            slidesPerView: 3,
-            spaceBetween: 50,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+            '540': {
+                slidesPerView: 3,
             },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                /* enable dot slide */
-            },
-            // mousewheel: true,
-            // keyboard: true,
+        },
 
-        });
-    </script>
+    });
 
+    var swiper = new Swiper(".mySwiper", {
+        // cssMode: true, cho kéo thả slide
+        loop: true,
+        /* vòng lặp */
+        slidesPerView: 3,
+        spaceBetween: 50,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            /* enable dot slide */
+        },
+        // mousewheel: true,
+        // keyboard: true,
+
+    });
+</script>
+<script>
+    $(function() {
+       $('.scroll-down').click (function() {
+         $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+         return false;
+       });
+    });
+</script>
 </body>
 
 </html>
